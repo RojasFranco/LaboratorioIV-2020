@@ -1,0 +1,8 @@
+Hasta antes de 1er parcial:
+Tp de juego: debemos poder cambiar la parte de interfaz
+Lo importante no es el juego en si, sino la interfaz que haremos(html, css)
+
+Si no cumplo los objetivos del tp no tengo posibilidad de promocionar
+
+Hasta antes del 2do parcial
+Tp2, es autoincremental, se iran agregando cosas haciendo semana a semana 

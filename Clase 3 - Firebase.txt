@@ -1,0 +1,47 @@
+En firebase se crea proyecto
+en Authentication podemos configurar logeo
+
+LA BD la puedo crear en Cloud Firestore o Realtime Database
+
+*	Instalacion
+en console npm install firebase @angular/fire
+
+en app.module.ts:
+importamos AngularFirestoreModule,	// Este creo que no es necesario
+AngularFireAuthModule,
+AngularFireStorageModule,// solo para guardar en storage
+AngularFireModule.initializeApp(enviroments.firebaseConfig);
+
+creamos servicioAutenticacion:
+importamos AngularFireAuth
+en su constructor inyectamos auth: AngularFireAuth
+
+y en los metodos usamos ese auth: crear usuario, ingresar, etc
+cuando creamos usuario lo agregamos a db con los metodos de dt.collection
+
+
+Para realizar modificaciones en la base de datos, donde quiera usarlo hago
+en su constructor: (inyeccion)
+import { AngularFirestore } from '@angular/fire/firestore';
+private db: AngularFirestore
+y con db podemos accerder a la colleccion, crear datos, eliminar, etc
+ver documentacion firebase cloud:
+-Agregar:
+Con id: this.db.collection('nombreColeccion').doc('id').set(elementoAgregar);
+Sin id: this.db.collection('nombreColeccion').add(elementoAgregar);
+
+-Actualizar
+this.db.collection('coleccion').doc('idElemento').update('campo/sActualizado/s');
+
+-Obtener:
+this.db.collection('coleccion').doc('idElemento').get();
+
+- Obtener todos:
+this.db.collection(coleccion).get();
+
+-Borrar
+this.db.collection(coleccion).doc(idElemento).delete()
+
+
+Es decir usamos autentication para logeo del usuario
+luego en bd guardamos, creamos lo que pida el negocio

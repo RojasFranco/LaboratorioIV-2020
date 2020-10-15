@@ -1,0 +1,56 @@
+Routing
+
+*********	se crea app-routing.module
+- Se puede crear al principio con comando
+
+- o crear las sentencias directamente en app.module.ts
+
+- o con el siguiente comando si ya es un proyecto generado:
+ng generate module app-routing --flat --module=app
+
+
+ahí tenemos la const routes: Routes = [
+	{ path: "*", component: Componente que quiera  }
+	{ path: "login", component: LoginComponent }
+]
+
+para path: "**" es cualquier ruta distinta que ingrese a las que tengo 
+declaradas.
+
+path:"": para cuando no ingrese nada. Seria la principal
+
+antes hay que importar: (en app-routing.module o en app.module.ts si creo ahi las sentencias)
+import { Routes, RouterModule } from '@angular/router';
+
+y dentro de @NgModule
+ imports: [RouterModule.forRoot(routes)],
+ exports: [RouterModule]
+
+***************** para indicar rutas en los HTML: ***************
+Se usa etiqueta routerLink
+
+Por ejemplo:
+<a routerLink="/login"> Ir a login </a>
+
+****************	En app.component.html 
+<router-oulet></router-oulet> : Para que haga el ruteo automatico
+
+
+*********************		OTRA FORMA DE RUTEO
+
+En typescript:
+
+import { Router } from '@angular/router';
+
+y en el constructor de la clase inyectamos el route:
+constructor(private route: Router)
+
+Y donde quiera dirigirlo:
+this.route.navigate(['login']);
+
+
+
+***********		ANGULAR MATERIAL
+
+ng add @angular/material
+Ver documentacion

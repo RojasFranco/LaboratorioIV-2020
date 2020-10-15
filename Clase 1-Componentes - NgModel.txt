@@ -1,0 +1,45 @@
+Vamos a deployar nuestra web en heroku
+BBDD: Firebase
+Instalamos angular cli. Se requiere instalar node tambien(si no lo tengo)
+
+passw heroku: #....
+
+***********	ANGULAR		***********
+
+para generar componentes: ng generate component nameComponent
+
+**************	NGMODEL	**************
+[(ngModel)] = "variable" : Esto va a actualizar el valor de la variable
+<p>el valor es {{ variable }}</p>
+
+*** Para que funcione ngModel: (esto en app.module)
+import {FormsModule} from '@angular/forms';
+y a las importaciones agregamos FormsModule 
+
+**************	Evento click	**************
+(click) = "nombreFuncion"
+
+
+*EJEMPLO
+HTML
+<h1>Bindeo</h1>
+<p>Simple</p>
+{{ejemplo}}
+
+<p>Doble</p>
+<input type="text" [(ngModel)]="ejemplo">
+<p>Prueba {{ejemplo}}</p>
+
+<button (click)="PruebaClick()">Prueba click</button> {{ejemplo2}}
+TS
+  public ejemplo = 'Hola Mundo';
+  public ejemplo2 = 'Hola Mundo';
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  PruebaClick() {
+    this.ejemplo2 = 'Ejecutamos el evento!!!';
+  }
+

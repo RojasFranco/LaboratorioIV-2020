@@ -1,0 +1,11 @@
+SERVICIOS
+
+ng g s nameServicio
+
+a diferencia del componente, el componente se construye cuando se lo llama
+y cuando salgo de el se destruye
+en cambio el servicio se construye desde que se corre el programa y su informacion
+se mantiene siempre.
+
+El servicio generado se va a utilizar en los componentes
+para esto lo que hago es inyectarlo en el constructor

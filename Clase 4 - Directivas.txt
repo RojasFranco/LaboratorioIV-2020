@@ -1,0 +1,55 @@
+*************		ngStyle		********************
+
+ngStyle: puedo asignarle una variable y que varie 'x' atributo
+
+Ejemplo
+em html:
+[ngStyle]:"width.px=miVariable"
+[ngStyle]:"width = anchoImg"
+
+y en typescript:
+miVariable = 50;
+anchoImg = 100%;
+
+y en algun metodo lo puedo cambiar
+
+
+***********		[ngClass]		***********
+Puedo aplicar clases dinamicas
+
+en html:
+[ngClass]= "classBoton"
+
+en css:
+.classBoton{}
+
+o en ts:
+classBoton: string;
+classBoton: 'btn-danger'
+
+y lo puedo cambiar en algun metodo
+
+***********		ngSwitch		***********
+<div [ngSwitch]="entidad">
+	<div [ngSwitchCase]="'alumno'" >
+
+
+	<div [ngSwitchCase]="'materia'" >
+	
+	<div [ngSwitchDefault]
+
+y en el ts:
+tenemos las variables entidad la cual le asignamos 'alumno' o 'materia' u otro
+
+**********	ngIf	**********
+
+<div *ngIf="cargando" else loading>
+	<p> esta Cargado el usuario
+
+<ng-template #loading>
+	<p> cargando...
+
+**********		src		**********
+Puedo tambien cargarlo dinamicamente
+<img [src]="rutaGif" >
+

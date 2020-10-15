@@ -1,0 +1,49 @@
+Puedo tener componentes dentro de otro 
+para eso necesito su selector: por ejemplo <app-form>
+
+****************		INPUT		******************
+El input se encarga de recibir el dato, queda 'escuchando'
+
+Dentro del ts del componente hijo: (en este ej grilla-paises)
+@input() miVariable: string; obs: input es una funcion por eso se declara con '()'
+
+en el componente padre que usa a ese hijo dentro del selector declaramos lo que
+queremos pasarle:
+
+<app-grilla-paises [miVariable]="titulo" > (esto esta dentro de home que es el padre)
+
+De esta forma tengo en el hijo en la variable 'miVariable' la informacion
+que le pase en el padre (en este caso "titulo")
+
+*****		BASICAMENTE
+en la app hijo declaro @input() variable cuando quiera recibir algo
+
+en el app padre donde tenga ese hijo paso algo por esa variable:
+<app-hijo [variable] = "tePasoEsto">
+
+****	OJO: puede tirar error si al input() variable no lo inicializo
+en ese caso hago @input() variable: any;
+
+******************		OUTPUT		***********************
+
+en el componente que quiera usarlo declaro primero:
+@Output() emitirVerPais: EventEmitter<any> = new EventEmitter(); output tambien es funcion
+
+luego donde quiera usarlo(por ejemplo en funcion):
+
+this.emitirVerPais.emit(variableQueQuieraPasar);	esto lanza un evento
+
+Luego en donde quiera recibir el evento por ejemplo en el padre(que es home):
+<app-grilla-paises (emitirVerPais)="nameFuncion($event)" > $event es lo que pase cuando emiti el evento
+
+
+
+Ejercicio TP
+
+tendremos login - registro
+
+ruteo bienvenido y paises listado
+
+paises listado me va a llevar al componente controlEntidad
+el controlEntidad seria page
+
