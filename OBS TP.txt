@@ -1,0 +1,12 @@
+[hidden]: etiqueta para ocultar elemento si es true, y mostrar si es false
+
+funcion sort(a,b):
+si a > b retorna positivo
+si a < b retorna negativo
+sino 0.
+Y de esa manera ordena de menor a mayor
+Si quiero que haga algo distinto paso una funcion dentro de sort
+y que me devuelva positivo o negativo segun lo que quiera hacer
+
+BASICAMENTE:
+si retorna positivo los invierte
