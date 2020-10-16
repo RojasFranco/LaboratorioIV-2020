@@ -2,6 +2,7 @@ Routing
 
 *********	se crea app-routing.module
 - Se puede crear al principio con comando
+--routing=true
 
 - o crear las sentencias directamente en app.module.ts
 
