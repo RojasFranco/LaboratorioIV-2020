@@ -45,3 +45,24 @@ this.db.collection(coleccion).doc(idElemento).delete()
 
 Es decir usamos autentication para logeo del usuario
 luego en bd guardamos, creamos lo que pida el negocio
+
+***	FIRESTORE GUARDAR IMAGENES
+si guardo la direccion de localhost no sirve ya que es temporal.
+
+Funcion Solucion
+  async AgregarImagen(file: File){
+    let urlretorno: string;    
+    let path = "imagenes/"+Date.now()+Math.random()*10;
+    
+    //REFERENCIA
+    let referencia = firebase.storage().ref(path);
+    //SUBO
+    await referencia.put(file).then(async()=>{
+      //Guardo url
+      await referencia.getDownloadURL().then(rta=>{
+      urlretorno = rta;
+      });
+    });
+
+    return urlretorno;
+  }
