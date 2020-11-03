@@ -1,0 +1,38 @@
+******		PIPES		******
+
+https://angular.io/guide/pipes
+https://angular.io/api/common/DatePipe
+Ejemplo: https://github.com/octaviovillegas/Flisol2018
+
+Transforman la informacion.
+Reciben algo y devuelven como se va a mostrar eso(o que).
+Solo el contenido html va a cambiar. (no su directiva)
+Nos permite centralizar el formato en un solo lugar, en un pipe.
+
+ng g pipe name;
+se importa donde quiero usarlo
+
+******		MANEJAR IDIOMAS		******
+
+Ejemplo: https://github.com/octaviovillegas/Angularidiomas
+
+ng add @angular/localize
+
+Se usan propiedades:
+- i18n: en los campos que quiera mostrar traduccion
+
+ng xi18n --output-path src/idiomas --out-file traducciones.en.xlf
+
+En cada archivo tenemos el nombre etiqueta: trans-unit,
+el identificador: source, y le cambiamos el target que es lo que se muestra
+
+No es necesario cambiar todo, simplemente el archivo de
+traducciones generado.
+
+
+
+
+
+
+
+

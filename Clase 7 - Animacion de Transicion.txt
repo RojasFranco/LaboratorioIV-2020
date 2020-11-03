@@ -1,0 +1,39 @@
+******		Animacion entre componentes		******
+
+Link documentacion: https://angular.io/guide/animations
+https://angular.io/guide/route-animations	USAMOS ESTE
+Cuando cambio de componente muestra animacion de transicion.
+
+* En app.module
+importar BrowserAnimationsModule:
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+En import BrowserAnimationsModule
+
+* En app.component.html
+dentro de un div [@routerAnimations]="prepareRoute(outlet)
+y dentro de router-outlet #outlet=outlet
+
+* En app.component.ts
+
+prepareRoute(outlet: RouterOutlet) {
+  return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+}
+
+* En routing, dentro de algun/os path
+data: {animation: 'Login'} con el nombre que queira darle, ese nombre
+se usara luego en el archivo animations
+
+* Creamos archivo animations.ts
+aca vamos a configurar las animaciones que queremos tener
+Una config importante es dentro de trigger, tenemos 
+transition('Login'=>Usuario)
+con esto declaramos que si vamos del componente login a usuario usariamos esta animacion.
+Se usa 'la ruta' declarada en el routing
+
+* importamos esa animacion creada en app.component.ts
+animation: [nombreClase]
+
+hay un ejemplo del prof: https://github.com/mmirotta/CursadaLab4/tree/master/CicloDeVidav8
+
+Con rutas children:
+https://medium.com/ngconf/animating-angular-route-transitions-ef02b871cc30
